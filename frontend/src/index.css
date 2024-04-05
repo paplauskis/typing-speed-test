@@ -95,3 +95,7 @@ header > h1 {
   border-left: 3px solid black;
   border-right: 3px solid black;
 }
+
+.duration-buttons > .active {
+  background-color: rgba(170, 255, 0, 0.4);
+}
