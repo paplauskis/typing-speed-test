@@ -53,3 +53,45 @@ header > h1 {
   height: 5px;
   background: linear-gradient(to right, var(--main-color), rgba(170, 255, 0, 0.4),  rgba(0, 145, 255, 0.4), var(--main-color));
 }
+
+.duration {
+  background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.duration > p {
+  margin-bottom: 0;
+}
+
+.duration-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.duration-buttons > p {
+  margin-left: 10px;
+}
+
+.duration-button {
+  height: 30px;
+  background-color: var(--main-color);
+  outline: 1px solid var(--main-color);
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+.duration-button:hover {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.duration-button:nth-child(2) {
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
