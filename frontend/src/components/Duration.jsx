@@ -1,7 +1,4 @@
-import { useState } from "react"
-function Duration () {
-  const [activeIndex, setActiveIndex] = useState(1)
-  console.log(activeIndex)
+function Duration ({ activeIndex, setActiveIndex }) {
   return (
     <div className="duration">
       <p>Choose the duration of the test</p>
