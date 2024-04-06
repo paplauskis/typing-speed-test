@@ -2,6 +2,8 @@ import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import NavbarLine from "./components/NavbarLine"
 import Duration from "./components/Duration"
+import SpeedTestContainer from "./components/SpeedTestContainer"
+import Words from "./components/Words"
 import { useState } from "react"
 
 function App() {
@@ -12,7 +14,11 @@ function App() {
       <NavbarLine />
       <Navbar />
       <NavbarLine />
-      <Duration activeIndex={activeIndex} setActiveIndex={setActiveIndex}/>
+      <Duration activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+      <SpeedTestContainer>
+        <Words minutes={activeIndex}/>
+      </SpeedTestContainer>
+      
     </div>
   )
 }
