@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 
-function Clock({ minutes, keyPressed }) {
+function Clock({ minutes }) {
   const [timeLeft, setTimeLeft] = useState(minutes * 60)
-  
-  if (keyPressed) {
+
     useEffect(() => {
       if (!timeLeft) return
       const timer = setInterval(() => {
@@ -11,7 +10,6 @@ function Clock({ minutes, keyPressed }) {
       }, 1000)
       return () => clearInterval(timer)
     }, [timeLeft])
-  }
 
   useEffect(() => {
     setTimeLeft(minutes * 60)
