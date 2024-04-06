@@ -11,7 +11,7 @@ function Words() {
     return (
       <div className="words">
         {letters.map((letter, index) => {
-          return <span key={index}>{letter}</span>
+          return <span id={index} key={index}>{letter}</span>
         })}
       </div>
     )
