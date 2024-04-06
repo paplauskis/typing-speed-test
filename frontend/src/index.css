@@ -124,3 +124,16 @@ header > h1 {
   overflow-y: hidden;
   border-radius: 25px;
 }
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px 20px 20px;
+  width: fit-content;
+}
+
+.clock .time {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
