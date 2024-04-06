@@ -1,20 +1,15 @@
-import { useState, useEffect } from 'react'
+import { loadRandomWords } from '../utils/textFileUtils'
 
-function Words({ minutes }) {
-  const [text, setText] = useState([])
-  
-  useEffect(() => {
-    fetch('../../words.txt')
-      .then((res) => res.text())
-      .then((t) => {
-        setText(t.split('\n'))
-      })
-      .catch(error => {
-        console.log(`error fetching words: ${error}`)
-      })
-  }, [])
+const letters = await loadRandomWords()
 
-  return <div className="words"></div>
+function Words() {
+  return (
+    <div className="words">
+      {letters.map((letter, index) => {
+        return <span key={index}>{letter}</span>
+      })}
+    </div>
+  )
 }
 
 export default Words
