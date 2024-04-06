@@ -5,6 +5,7 @@ import Duration from "./components/Duration"
 import SpeedTestContainer from "./components/SpeedTestContainer"
 import Words from "./components/Words"
 import Clock from "./components/Clock"
+import TestInfo from "./components/TestInfo"
 import { useState, useEffect } from "react"
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
   const [keyPressed, setKeyPressed] = useState(false)
   
   useEffect(() => {
-    const handlePress = () => setKeyPressed(true)
-
+    const handlePress = (e) => {
+      if (e.key === ' ') setKeyPressed(true)
+    }
     window.addEventListener('keydown', handlePress)
     return () => window.removeEventListener('keydown', handlePress)
   }, [])
@@ -26,7 +28,10 @@ function App() {
       <NavbarLine />
       <Duration activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
       <SpeedTestContainer>
-        {keyPressed && <Clock minutes={activeIndex}/>}
+        <div className="test-stats">
+          {!keyPressed && <TestInfo/>}
+          {keyPressed && <Clock minutes={activeIndex}/>}
+        </div>
         <Words />
       </SpeedTestContainer>
     </div>
