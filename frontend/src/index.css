@@ -104,3 +104,12 @@ header > h1 {
 .duration-buttons > .active {
   background-color: var(--green);
 }
+
+.speed-test-container {
+  background-color: var(--accent-color);
+  border-radius: 25px;
+  width: 50%;
+  height: 200px;
+  margin: auto;
+}
+
