@@ -17,7 +17,7 @@ function Clock({ minutes }) {
 
   return (
     <div className="clock">
-      <span className="time">{timeLeft ? timeLeft : 0}</span>
+      <span className="time">{timeLeft}</span>
       <span className="seconds">Seconds</span>
     </div>
   )
