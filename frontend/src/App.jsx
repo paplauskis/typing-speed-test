@@ -7,6 +7,9 @@ import Words from "./components/Words"
 import Clock from "./components/Clock"
 import TestInfo from "./components/TestInfo"
 import Input from "./components/Input"
+import WPM from "./components/WPM"
+import CPM from "./components/CPM"
+import Accuracy from "./components/Accuracy"
 import { useState, useEffect } from "react"
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
         <div className="test-stats">
           {!keyPressed && <TestInfo/>}
           {keyPressed && <Clock minutes={activeIndex}/>}
+          {keyPressed && <WPM />}
+          {keyPressed && <CPM />}
+          {keyPressed && <Accuracy />}
           {keyPressed && <Input />}
         </div>
         <Words />
