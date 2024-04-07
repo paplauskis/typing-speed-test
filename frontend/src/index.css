@@ -126,7 +126,7 @@ header > h1 {
   color: white;
 }
 
-.clock {
+.stats-div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,11 +139,17 @@ header > h1 {
   font-weight: bold;
 }
 
+.stats-div > .num {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
 .test-stats {
   height: 81px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 .test-stats .info {
@@ -154,6 +160,6 @@ header > h1 {
 }
 
 .info > img {
-  width: 30px;
+  width: 40px;
   margin-right: 15px;
 }
