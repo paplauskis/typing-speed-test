@@ -6,6 +6,7 @@ import SpeedTestContainer from "./components/SpeedTestContainer"
 import Words from "./components/Words"
 import Clock from "./components/Clock"
 import TestInfo from "./components/TestInfo"
+import Input from "./components/Input"
 import { useState, useEffect } from "react"
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   }, [])
   
   return (
-    <div className="main">
+    <>
       <Header />
       <NavbarLine />
       <Navbar />
@@ -31,10 +32,11 @@ function App() {
         <div className="test-stats">
           {!keyPressed && <TestInfo/>}
           {keyPressed && <Clock minutes={activeIndex}/>}
+          {keyPressed && <Input />}
         </div>
         <Words />
       </SpeedTestContainer>
-    </div>
+    </>
   )
 }
 
