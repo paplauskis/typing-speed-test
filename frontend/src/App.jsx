@@ -26,7 +26,7 @@ function App() {
       <NavbarLine />
       <Navbar />
       <NavbarLine />
-      <Duration activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+      <Duration activeIndex={activeIndex} setActiveIndex={setActiveIndex} keyPressed={keyPressed} />
       <SpeedTestContainer>
         <div className="test-stats">
           {!keyPressed && <TestInfo/>}
