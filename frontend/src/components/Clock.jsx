@@ -16,7 +16,7 @@ function Clock({ minutes }) {
   }, [minutes])
 
   return (
-    <div className="clock">
+    <div className="clock stats-div">
       <span className="time">{timeLeft}</span>
       <span className="seconds">Seconds</span>
     </div>
