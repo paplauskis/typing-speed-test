@@ -5,7 +5,8 @@ export async function loadRandomWords() {
     const t = await res.text()
     const arr = t.split('\n')
     for (let i = 0; i < 500; i++) {
-      newArr.push(arr[Math.floor(Math.random() * 1000)])
+      const randomWord = arr[Math.floor(Math.random() * 1000)]
+      newArr.push(randomWord.toLowerCase())
     }
     return newArr.join(' ').split('')
   } catch (error) {
