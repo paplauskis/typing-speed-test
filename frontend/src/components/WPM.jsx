@@ -1,7 +1,7 @@
-function WPM({ wpm }) {
+function WPM({ wordsPerMinute }) {
   return (
     <div className="wpm stats-div">
-      <span className="num">43</span>
+      <span className="num">{wordsPerMinute}</span>
       <span>words/min</span>
     </div>
   )
