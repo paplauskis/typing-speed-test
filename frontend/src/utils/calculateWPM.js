@@ -1,9 +1,11 @@
-function calculateWPM(selectedTime) {
+function calculateWPM() {
   const wordCount = getWordCount()
   const timeLeft = getTimeLeft()
-  const totalTime = getTotalTime()
+  let totalTime = null
+  if (totalTime === null) totalTime = getTotalTime()
   const timeElapsed = totalTime - timeLeft
-  
+  const wpm = Math.floor(wordCount / timeElapsed * 60)
+  return wpm
 }
 
 function getWordCount() {
