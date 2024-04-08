@@ -1,5 +1,8 @@
-function calculateWPM() {
+function calculateWPM(selectedTime) {
   const wordCount = getWordCount()
+  const timeLeft = getTimeLeft()
+  const totalTime = getTotalTime()
+  const timeElapsed = totalTime - timeLeft
   
 }
 
@@ -12,6 +15,23 @@ function getWordCount() {
       count++
   })
   return count
+}
+
+function getTimeLeft() {
+  const timeLeft = document.querySelector('.time').textContent
+  return timeLeft
+}
+
+function getTotalTime() {
+  const durationsBtns = document.getElementsByClassName('duration-button')
+  const durationsBtnsArray = [...durationsBtns]
+  let totalTime = ''
+  durationsBtnsArray.forEach(btn => {
+    if (btn.classList[1]) {
+      totalTime = (btn.textContent * 60).toString()
+    }
+  })
+  return totalTime
 }
 
 export default calculateWPM
