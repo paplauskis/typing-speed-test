@@ -12,6 +12,7 @@ import CPM from "./components/CPM"
 import Accuracy from "./components/Accuracy"
 import checkPressed from "./utils/test"
 import calculateWPM from "./utils/calculateWPM"
+import calculateCPM from "./utils/calculateCPM"
 import { useState, useEffect } from "react"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   const [keyPressed, setKeyPressed] = useState(false)
   const [accuracy, setAccuracy] = useState('0%')
   const [wordsPerMinute, setWordsPerMinute] = useState(0)
+  const [charsPerMinute, setCharsPerMinute] = useState(0)
 
   useEffect(() => {
     const handlePress = (e) => {
@@ -26,6 +28,7 @@ function App() {
       if (setKeyPressed) {
         setAccuracy(checkPressed(e))
         setWordsPerMinute(calculateWPM())
+        setCharsPerMinute(calculateCPM())
       }
     }
     window.addEventListener('keydown', handlePress)
@@ -43,7 +46,7 @@ function App() {
           {!keyPressed && <TestInfo/>}
           {keyPressed && <Clock minutes={activeIndex}/>}
           {keyPressed && <WPM wordsPerMinute={wordsPerMinute}/>}
-          {keyPressed && <CPM />}
+          {keyPressed && <CPM charsPerMinute={charsPerMinute}/>}
           {keyPressed && <Accuracy accuracy={accuracy}/>}
           {keyPressed && <Input />}
         </div>
