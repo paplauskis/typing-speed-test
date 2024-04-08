@@ -1,4 +1,12 @@
-function TestStats({ accuracy, wpm, cpm, correctChars, wrongChars }) {
+function TestStats({
+  accuracy,
+  wpm,
+  cpm,
+  correctChars,
+  wrongChars,
+  correctWords,
+  wrongWords,
+}) {
   return (
     <div id="test-stats">
       <div className="section-one">
@@ -16,8 +24,8 @@ function TestStats({ accuracy, wpm, cpm, correctChars, wrongChars }) {
         <hr />
         <div className="words-typed subsection-one">
           <span>Words</span>
-          <span className="correct">-----</span>
-          <span className="wrong">-----</span>
+          <span className="correct">{correctWords}</span>
+          <span className="wrong">{wrongWords}</span>
         </div>
       </div>
       <div className="section-two">
