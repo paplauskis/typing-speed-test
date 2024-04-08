@@ -181,7 +181,8 @@ header > h1 {
   margin: 50px auto;
 }
 
-#test-stats .section-one {
+#test-stats .section-one,
+#test-stats .section-two {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -189,6 +190,7 @@ header > h1 {
   border-radius: 25px;
   gap: 5px;
   align-items: center;
+  margin-bottom: 30px
 }
 
 #test-stats .subsection-one {
@@ -196,8 +198,18 @@ header > h1 {
   gap: 20px;
 }
 
+#test-stats .subsection-two {
+  display: flex;
+  gap: 60px;
+}
+
 #test-stats .subsection-one > span {
   width: 90px;
+  text-align: center;
+}
+
+#test-stats .subsection-two > span {
+  width: 150px;
   text-align: center;
 }
 
@@ -210,6 +222,5 @@ header > h1 {
 }
 
 hr {
-  color: black;
-  width: 50%;
+  width: 70%;
 }
