@@ -8,6 +8,7 @@ export function checkPressed(e) {
     letter.classList.remove('typed')
     letter.classList.remove('wrong')
     letter.classList.remove('correct')
+    letter.textContent === '_' ? (letter.textContent = ' ') : letter.textContent
   } else {
     if (gameStarted) {
       const letter = document.getElementById(`${charsTyped}`)
