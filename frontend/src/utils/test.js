@@ -9,7 +9,7 @@ export function checkPressed(e) {
     letter.classList.remove('wrong')
     letter.classList.remove('correct')
     letter.textContent === '_' ? (letter.textContent = ' ') : letter.textContent
-    calculateAccuracy()
+    return calculateAccuracy()
   } else {
     if (gameStarted) {
       const letter = document.getElementById(`${charsTyped}`)
@@ -22,12 +22,13 @@ export function checkPressed(e) {
           : letter.textContent
       }
       letter.classList.add('typed')
-      calculateAccuracy()
       charsTyped++
+      return calculateAccuracy()
     }
   }
   if (!gameStarted && !charsTyped && e.key === ' ') {
     gameStarted = true
+    return '0%'
   }
 }
 
@@ -42,5 +43,3 @@ export function calculateAccuracy() {
   const number = Math.floor(correctTypes / typedLetters.length * 100)
   return number + '%'
 }
-
-window.addEventListener('keydown', checkPressed)
