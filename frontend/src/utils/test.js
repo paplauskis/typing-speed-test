@@ -3,7 +3,7 @@ import calculateAccuracy from "./calculateAccuracy"
 let gameStarted = false
 let charsTyped = 0
 
-export function checkPressed(e) {
+function checkPressed(e) {
   if (e.key === 'Backspace' && gameStarted) {
     charsTyped--
     const letter = document.getElementById(`${charsTyped}`)
@@ -33,3 +33,5 @@ export function checkPressed(e) {
     return '0%'
   }
 }
+
+export default checkPressed
