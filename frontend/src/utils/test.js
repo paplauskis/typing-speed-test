@@ -5,7 +5,7 @@ export function checkPressed(e) {
   if (e.key === 'Backspace' && gameStarted) {
     charsTyped--
     const letter = document.getElementById(`${charsTyped}`)
-    letter.classList.remove('current')
+    letter.classList.remove('typed')
     letter.classList.remove('wrong')
     letter.classList.remove('correct')
   } else {
@@ -19,7 +19,7 @@ export function checkPressed(e) {
           ? (letter.textContent = '_')
           : letter.textContent
       }
-      letter.classList.add('current')
+      letter.classList.add('typed')
       charsTyped++
     }
   }
