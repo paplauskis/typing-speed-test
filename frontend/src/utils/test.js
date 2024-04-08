@@ -15,6 +15,9 @@ export function checkPressed(e) {
         letter.className = 'correct'
       } else {
         letter.className = 'wrong'
+        letter.textContent === ' '
+          ? (letter.textContent = '_')
+          : letter.textContent
       }
       letter.classList.add('current')
       charsTyped++
@@ -22,7 +25,7 @@ export function checkPressed(e) {
   }
   if (!gameStarted && !charsTyped && e.key === ' ') {
     gameStarted = true
-  } 
+  }
 }
 
 window.addEventListener('keydown', checkPressed)
