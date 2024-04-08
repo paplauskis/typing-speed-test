@@ -21,25 +21,29 @@ function TestStats({ accuracy, wpm, cpm }) {
         </div>
       </div>
       <div className="section-two">
-        <div className="chars-min">
+        <div className="chars-min subsection-two">
           <span>Characters/min</span>
           <span>{cpm}</span>
         </div>
-        <div className="words-min">
+        <hr />
+        <div className="words-min subsection-two">
           <span>Words/min</span>
           <span>{wpm}</span>
         </div>
-        <div className="chars-sec">
+        <hr />
+        <div className="chars-sec subsection-two">
           <span>Characters/sec</span>
           <span>{(cpm / 60).toString().slice(0, 3)}</span>
         </div>
-        <div className="words-sec">
+        <hr />
+        <div className="words-sec subsection-two">
           <span>Words/sec</span>
           <span>{(wpm / 60).toString().slice(0, 3)}</span>
         </div>
-        <div className="accuracy-percent">
+        <hr />
+        <div className="accuracy-percent subsection-two">
           <span>Accuracy</span>
-          <span>{accuracy}%</span>
+          <span>{accuracy}</span>
         </div>
       </div>
     </div>
