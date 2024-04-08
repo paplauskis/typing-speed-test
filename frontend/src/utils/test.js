@@ -1,3 +1,5 @@
+import calculateAccuracy from "./calculateAccuracy"
+
 let gameStarted = false
 let charsTyped = 0
 
@@ -30,16 +32,4 @@ export function checkPressed(e) {
     gameStarted = true
     return '0%'
   }
-}
-
-export function calculateAccuracy() {
-  const tl = document.querySelectorAll('.typed')
-  const typedLetters = [...tl]
-  let correctTypes = 0
-  let wrongTypes = 0
-  typedLetters.forEach(letter => {
-    letter.classList[0] === 'correct' ? correctTypes++ : wrongTypes++
-  })
-  const number = Math.floor(correctTypes / typedLetters.length * 100)
-  return number + '%'
 }
