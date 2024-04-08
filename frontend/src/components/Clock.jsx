@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 
-function Clock({ minutes }) {
+function Clock({ minutes, stopTest }) {
   const [timeLeft, setTimeLeft] = useState(minutes * 60)
 
   useEffect(() => {
-    if (!timeLeft) return
+    if (!timeLeft) {
+      stopTest()
+      return
+    }
     const timer = setInterval(() => {
       setTimeLeft(timeLeft - 1)
     }, 1000)
