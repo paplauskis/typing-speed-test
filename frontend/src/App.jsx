@@ -17,15 +17,15 @@ import { useState, useEffect } from "react"
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(1)
-  const [keyPressed, setKeyPressed] = useState(false)
+  const [gameStarted, setGameStarted] = useState(false)
   const [accuracy, setAccuracy] = useState('0%')
   const [wordsPerMinute, setWordsPerMinute] = useState(0)
   const [charsPerMinute, setCharsPerMinute] = useState(0)
 
   useEffect(() => {
     const handlePress = (e) => {
-      if (e.key === ' ') setKeyPressed(true)
-      if (setKeyPressed) {
+      if (e.key === ' ') setGameStarted(true)
+      if (setGameStarted) {
         setAccuracy(checkPressed(e))
         setWordsPerMinute(calculateWPM())
         setCharsPerMinute(calculateCPM())
@@ -40,15 +40,15 @@ function App() {
       <NavbarLine />
       <Navbar />
       <NavbarLine />
-      <Duration activeIndex={activeIndex} setActiveIndex={setActiveIndex} keyPressed={keyPressed} />
+      <Duration activeIndex={activeIndex} setActiveIndex={setActiveIndex} keyPressed={gameStarted} />
       <SpeedTestContainer>
         <div className="test-stats">
-          {!keyPressed && <TestInfo/>}
-          {keyPressed && <Clock minutes={activeIndex}/>}
-          {keyPressed && <WPM wordsPerMinute={wordsPerMinute}/>}
-          {keyPressed && <CPM charsPerMinute={charsPerMinute}/>}
-          {keyPressed && <Accuracy accuracy={accuracy}/>}
-          {keyPressed && <Input />}
+          {!gameStarted && <TestInfo/>}
+          {gameStarted && <Clock minutes={activeIndex}/>}
+          {gameStarted && <WPM wordsPerMinute={wordsPerMinute}/>}
+          {gameStarted && <CPM charsPerMinute={charsPerMinute}/>}
+          {gameStarted && <Accuracy accuracy={accuracy}/>}
+          {gameStarted && <Input />}
         </div>
         <Words />
       </SpeedTestContainer>
