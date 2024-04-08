@@ -10,6 +10,7 @@ import Input from './components/Input'
 import WPM from './components/WPM'
 import CPM from './components/CPM'
 import Accuracy from './components/Accuracy'
+import TestStats from './components/TestStats'
 import checkPressed from './utils/test'
 import calculateWPM from './utils/calculateWPM'
 import calculateCPM from './utils/calculateCPM'
@@ -37,9 +38,11 @@ function App() {
         setCharsPerMinute(calculateCPM())
       }
     }
-    window.addEventListener('keydown', handlePress)
+    if (!testStopped) {
+      window.addEventListener('keydown', handlePress)
+    }
     return () => window.removeEventListener('keydown', handlePress)
-  }, [])
+  }, [testStopped])
   return (
     <>
       <Header />
@@ -67,6 +70,13 @@ function App() {
             <Words />
           </SpeedTestContainer>
         </>
+      )}
+      {testStopped && (
+        <TestStats
+          accuracy={accuracy}
+          wpm={wordsPerMinute}
+          cpm={charsPerMinute}
+        />
       )}
     </>
   )
