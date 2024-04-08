@@ -126,6 +126,18 @@ header > h1 {
   color: white;
 }
 
+.words > .correct {
+  color: green;
+}
+
+.words > .wrong {
+  color: red;
+}
+
+.words > .typed {
+  background-color: black;
+}
+
 .stats-div {
   display: flex;
   flex-direction: column;
