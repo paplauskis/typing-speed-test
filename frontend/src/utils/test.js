@@ -9,6 +9,7 @@ export function checkPressed(e) {
     letter.classList.remove('wrong')
     letter.classList.remove('correct')
     letter.textContent === '_' ? (letter.textContent = ' ') : letter.textContent
+    calculateAccuracy()
   } else {
     if (gameStarted) {
       const letter = document.getElementById(`${charsTyped}`)
@@ -21,12 +22,25 @@ export function checkPressed(e) {
           : letter.textContent
       }
       letter.classList.add('typed')
+      calculateAccuracy()
       charsTyped++
     }
   }
   if (!gameStarted && !charsTyped && e.key === ' ') {
     gameStarted = true
   }
+}
+
+export function calculateAccuracy() {
+  const tl = document.querySelectorAll('.typed')
+  const typedLetters = [...tl]
+  let correctTypes = 0
+  let wrongTypes = 0
+  typedLetters.forEach(letter => {
+    letter.classList[0] === 'correct' ? correctTypes++ : wrongTypes++
+  })
+  const number = Math.floor(correctTypes / typedLetters.length * 100)
+  return number + '%'
 }
 
 window.addEventListener('keydown', checkPressed)
