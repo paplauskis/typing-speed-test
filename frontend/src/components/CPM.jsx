@@ -1,7 +1,7 @@
-function CPM({ cpm }) {
+function CPM({ charsPerMinute }) {
   return (
     <div className="cpm stats-div">
-      <span className="num">234</span>
+      <span className="num">{charsPerMinute}</span>
       <span>chars/min</span>
     </div>
   )
