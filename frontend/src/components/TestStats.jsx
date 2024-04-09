@@ -1,3 +1,5 @@
+import SubmitResult from "./SubmitResult"
+
 function TestStats({
   accuracy,
   wpm,
@@ -9,6 +11,7 @@ function TestStats({
 }) {
   return (
     <div id="test-stats">
+      <h1>Result</h1>
       <div className="section-one">
         <div className="correct-wrong subsection-one">
           <span></span>
@@ -59,6 +62,7 @@ function TestStats({
           <span>{accuracy}</span>
         </div>
       </div>
+      <SubmitResult />
     </div>
   )
 }
