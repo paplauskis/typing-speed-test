@@ -16,6 +16,7 @@ import calculateWPM from './utils/calculateWPM'
 import calculateCPM from './utils/calculateCPM'
 import calculateChars from './utils/calculateChars'
 import calculateWords from './utils/calculateWords'
+import scrollWords from './utils/scrollWords'
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -31,7 +32,6 @@ function App() {
   const [wrongWords, setWrongWords] = useState(0)
 
   const stopTest = () => {
-    console.log('test over')
     setCorrectChars(calculateChars().correctChars)
     setCorrectWords(calculateWords().correctWords)
     setWrongChars(calculateChars().wrongChars)
@@ -46,8 +46,10 @@ function App() {
         setAccuracy(checkPressed(e))
         setWordsPerMinute(calculateWPM())
         setCharsPerMinute(calculateCPM())
+        scrollWords()
       }
     }
+
     if (!testStopped) {
       window.addEventListener('keydown', handlePress)
     }
