@@ -15,6 +15,7 @@ import checkPressed from './utils/test'
 import calculateWPM from './utils/calculateWPM'
 import calculateCPM from './utils/calculateCPM'
 import calculateChars from './utils/calculateChars'
+import calculateWords from './utils/calculateWords'
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -26,13 +27,15 @@ function App() {
   const [testStopped, setTestStopped] = useState(false)
   const [correctChars, setCorrectChars] = useState(0)
   const [correctWords, setCorrectWords] = useState(0)
-  // const [wrongChars, setWrongChars] = useState(0)
-  // const [wrongWords, setWrongWords] = useState(0)
+  const [wrongChars, setWrongChars] = useState(0)
+  const [wrongWords, setWrongWords] = useState(0)
 
   const stopTest = () => {
     console.log('test over')
     setCorrectChars(calculateChars().correctChars)
+    setCorrectWords(calculateWords().correctWords)
     setWrongChars(calculateChars().wrongChars)
+    setWrongWords(calculateWords().wrongWords)
     setTestStopped(true)
   }
 
@@ -85,6 +88,8 @@ function App() {
           cpm={charsPerMinute}
           correctChars={correctChars}
           wrongChars={wrongChars}
+          correctWords={correctWords}
+          wrongWords={wrongWords}
         />
       )}
     </>
