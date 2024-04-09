@@ -6,8 +6,13 @@ function SubmitResult() {
       </span>
       <form action="/ranking" method="POST">
         <div className="form">
-        <input id="username" name="username" type="text" />
-        <button type="submit">Submit</button>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="your username"
+          />
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>
