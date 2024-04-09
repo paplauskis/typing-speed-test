@@ -4,7 +4,7 @@ function SubmitResult() {
       <span className="submit-text">
         Submit your result to compare yourself to other users
       </span>
-      <form action="/ranking" method="POST">
+      <form action="/pc-ranking" method="POST">
         <div className="form">
           <input
             id="username"
