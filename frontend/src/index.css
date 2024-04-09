@@ -41,6 +41,7 @@ header > h1 {
   background-color: var(--accent-color);
   color: var(--text-color);
   transition: 0.3s;
+  box-shadow: 0px 5px 5px 0px black;
 }
 
 .nav-option:hover {
@@ -113,6 +114,7 @@ header > h1 {
   height: fit-content;
   margin: auto;
   padding: 20px;
+  box-shadow: 0px 5px 5px 0px black;
 }
 
 .words {
@@ -164,6 +166,10 @@ header > h1 {
   gap: 20px;
 }
 
+#test-stats > h1 {
+  text-align: center;
+}
+
 .test-stats .info {
   font-size: 1.4rem;
   display: flex;
@@ -190,7 +196,8 @@ header > h1 {
   border-radius: 25px;
   gap: 5px;
   align-items: center;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 5px 0px black;
 }
 
 #test-stats .subsection-one {
