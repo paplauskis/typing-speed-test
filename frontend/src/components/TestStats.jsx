@@ -29,6 +29,11 @@ function TestStats({
         </div>
       </div>
       <div className="section-two">
+      <div className="chars-min subsection-two">
+          <span>Score</span>
+          <span>{correctChars - wrongChars}</span>
+        </div>
+        <hr />
         <div className="chars-min subsection-two">
           <span>Characters/min</span>
           <span>{cpm}</span>
