@@ -2,16 +2,15 @@ function calculateWords() {
   const count = getWordCount()
   const correctWords = getCorrectWords()
   const wrongWords = count - correctWords
-  return {correctWords, wrongWords}
+  return { correctWords, wrongWords }
 }
 
 function getWordCount() {
   const tw = document.querySelectorAll('.typed')
   const typedLetters = [...tw]
   let count = 0
-  typedLetters.forEach(letter => {
-    if (letter.textContent === ' ')
-      count++
+  typedLetters.forEach((letter) => {
+    if (letter.textContent === ' ') count++
   })
   return count
 }
@@ -21,7 +20,7 @@ function getCorrectWords() {
   const typedLetters = [...tw]
   let correctWordCount = 0
   let wrong = false
-  typedLetters.forEach(letter => {
+  typedLetters.forEach((letter) => {
     if (letter.classList[0] === 'wrong') {
       wrong = true
     }

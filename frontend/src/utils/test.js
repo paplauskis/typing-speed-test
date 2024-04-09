@@ -1,4 +1,4 @@
-import calculateAccuracy from "./calculateAccuracy"
+import calculateAccuracy from './calculateAccuracy'
 
 let gameStarted = false
 let charsTyped = 0

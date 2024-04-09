@@ -1,4 +1,4 @@
-import SubmitResult from "./SubmitResult"
+import SubmitResult from './SubmitResult'
 
 function TestStats({
   accuracy,
@@ -32,7 +32,7 @@ function TestStats({
         </div>
       </div>
       <div className="section-two">
-      <div className="chars-min subsection-two">
+        <div className="chars-min subsection-two">
           <span>Score</span>
           <span>{correctChars - wrongChars}</span>
         </div>

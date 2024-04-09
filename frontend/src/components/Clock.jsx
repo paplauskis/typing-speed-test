@@ -20,7 +20,9 @@ function Clock({ minutes, stopTest }) {
 
   return (
     <div className="clock stats-div">
-      <span className="time" style={{color: timeLeft <= 5 && 'yellow'}}>{timeLeft}</span>
+      <span className="time" style={{ color: timeLeft <= 5 && 'yellow' }}>
+        {timeLeft}
+      </span>
       <span className="seconds">Seconds</span>
     </div>
   )

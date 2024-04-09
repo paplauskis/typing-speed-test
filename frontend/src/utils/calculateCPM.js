@@ -1,4 +1,4 @@
-import { getTimeLeft, getTotalTime } from "./getTime"
+import { getTimeLeft, getTotalTime } from './getTime'
 
 function calculateCPM() {
   const tl = document.querySelectorAll('.typed')
@@ -8,7 +8,7 @@ function calculateCPM() {
   let totalTime = null
   if (totalTime === null) totalTime = getTotalTime()
   const timeElapsed = totalTime - timeLeft
-  const cpm = Math.floor(totalTypedLetters / timeElapsed * 60)
+  const cpm = Math.floor((totalTypedLetters / timeElapsed) * 60)
   return cpm
 }
 

@@ -1,7 +1,7 @@
 function calculateChars() {
   const correctChars = getCorrectChars()
   const wrongChars = getWrongChars()
-  return {correctChars, wrongChars}
+  return { correctChars, wrongChars }
 }
 
 function getCorrectChars() {

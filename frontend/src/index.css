@@ -53,7 +53,13 @@ header > h1 {
 .line {
   width: 100%;
   height: 5px;
-  background: linear-gradient(to right, var(--main-color), var(--green),  rgba(0, 145, 255, 0.4), var(--main-color));
+  background: linear-gradient(
+    to right,
+    var(--main-color),
+    var(--green),
+    rgba(0, 145, 255, 0.4),
+    var(--main-color)
+  );
 }
 
 .duration {
