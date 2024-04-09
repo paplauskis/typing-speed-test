@@ -231,3 +231,23 @@ header > h1 {
 hr {
   width: 70%;
 }
+
+.submit-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-text {
+  text-align: center;
+}
+
+.form input {
+  width: 150px;
+}
