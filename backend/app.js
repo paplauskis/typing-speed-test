@@ -1,13 +1,15 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const indexRouter = require('./routes/index')
 
 const app = express()
 const mongoDB = process.env.MONGO_DB_URI
 
 app.use(express.json())
-app.use('/', indexRouter)
+app.use(cors())
+app.use('/api', indexRouter)
 
 main().catch((err) => console.log(err))
 async function main() {
