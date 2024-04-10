@@ -176,6 +176,9 @@ header > h1 {
   text-align: center;
   margin-top: 0px;
 }
+#test-stats > h3 {
+  text-align: center;
+}
 
 .test-stats .info {
   font-size: 1.4rem;
