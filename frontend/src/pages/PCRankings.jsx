@@ -18,7 +18,27 @@ function PCRankings() {
     }
     fetchResults()
   }, [])
-  
+  if (loading) {
+    return <h1>Loading...</h1>
+  } else if (!results) {
+    <h1>An error has occured while loading leaderboard</h1>
+  } else {
+    return (
+      <div>
+        {results.map((result, index) => (
+          <div key={index} className="result">
+            <span>{result.username}</span>
+            <span>{result.score}</span>
+            <span>{result.correctChars}</span>
+            <span>{result.correctWords}</span>
+            <span>{result.cpm}</span>
+            <span>{result.wpm}</span>
+            <span>{result.accuracy}%</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
 }
 
 export default PCRankings
