@@ -8,10 +8,12 @@ function TestStats({
   wrongChars,
   correctWords,
   wrongWords,
+  minutes
 }) {
   return (
     <div id="test-stats">
       <h1>Result</h1>
+      <h3>{minutes} Minute Test</h3>
       <div className="section-one">
         <div className="correct-wrong subsection-one">
           <span></span>
