@@ -92,6 +92,7 @@ function App() {
           wrongChars={wrongChars}
           correctWords={correctWords}
           wrongWords={wrongWords}
+          minutes={activeIndex}
         />
       )}
     </>
