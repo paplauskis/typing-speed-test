@@ -64,7 +64,16 @@ function TestStats({
           <span>{accuracy}</span>
         </div>
       </div>
-      <SubmitResult />
+      <SubmitResult 
+      accuracy={accuracy}
+      wpm={wpm}
+      cpm={cpm}
+      correctChars={correctChars}
+      wrongChars={wrongChars}
+      correctWords={correctWords}
+      wrongWords={wrongWords}
+      minutes={minutes}
+      />
     </div>
   )
 }
