@@ -25,26 +25,29 @@ function PCRankings() {
     return <h1>An error has occured while loading leaderboard</h1>
   } else {
     return (
-      <div className="results">
-        <div className="result results-header">
-          <Result />
-        </div>
-        {results.map((result, index) => (
-          <div key={index} className="result">
-            <Result
-              index={index}
-              username={result.username}
-              score={result.score}
-              correctChars={result.correctChars}
-              wrongChars={result.wrongChars}
-              correctWords={result.correctWords}
-              wrongWords={result.wrongWords}
-              cpm={result.cpm}
-              wpm={result.wpm}
-              accuracy={result.accuracy}
-            />
+      <div className="leaderboard">
+        <h2>Standard keyboard rankings (1 minute)</h2>
+        <div className="results">
+          <div className="result results-header">
+            <Result />
           </div>
-        ))}
+          {results.map((result, index) => (
+            <div key={index} className="result">
+              <Result
+                index={index}
+                username={result.username}
+                score={result.score}
+                correctChars={result.correctChars}
+                wrongChars={result.wrongChars}
+                correctWords={result.correctWords}
+                wrongWords={result.wrongWords}
+                cpm={result.cpm}
+                wpm={result.wpm}
+                accuracy={result.accuracy}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     )
   }
