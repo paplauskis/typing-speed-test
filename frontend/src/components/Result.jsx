@@ -7,7 +7,7 @@ function Result({
   wrongWords = 'Wrong words',
   cpm = 'Chars/min',
   wpm = 'Words/min',
-  accuracy = 'Accuracy',
+  accuracy = 'Accuracy, %',
 }) {
   return (
     <>
