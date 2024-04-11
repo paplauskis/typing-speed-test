@@ -288,3 +288,59 @@ hr {
   border-color: var(--green);
   cursor: pointer;
 }
+
+.leaderboard > h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: fit-content;
+  margin: 15px auto 30px auto;
+}
+
+.result {
+  display: flex;
+  gap: 0px;
+  border: 1px solid black;
+  width: fit-content;
+}
+
+.result > .stat {
+  border: 1px solid black;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.results .result:nth-child(odd) {
+  background-color: var(--accent-color);
+}
+
+.results .result:nth-child(even) {
+  background-color: rgb(66, 66, 66);
+}
+
+.result > .username {
+  width: 160px;
+}
+
+
+.result .correct-chars,
+.result .correct-words {
+  color: rgb(0, 172, 0);
+}
+
+.result .wrong-chars,
+.result .wrong-words {
+  color: red;
+}
+
+.results-header > .stat{
+  color: var(--text-color);
+}
