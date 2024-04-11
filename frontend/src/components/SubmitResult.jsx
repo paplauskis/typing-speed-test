@@ -1,13 +1,38 @@
-import { useState } from "react"
+import { useState } from 'react'
 
-function SubmitResult() {
+function SubmitResult({
+  accuracy,
+  wpm,
+  cpm,
+  correctChars,
+  wrongChars,
+  correctWords,
+  wrongWords,
+  minutes,
+}) {
   const [username, setUsername] = useState('')
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const result = {
+      username,
+      score: correctChars - wrongChars,
+      accuracy,
+      wpm,
+      cpm,
+      correctChars,
+      wrongChars,
+      correctWords,
+      wrongWords,
+      minutes,
+    }
+  }
+
   return (
     <div className="submit-result">
       <span className="submit-text">
         Submit your result to compare yourself to other users
       </span>
-      <form action="/pc-ranking" method="POST">
+      <form onSubmit={handleSubmit}>
         <div className="form">
           <input
             id="username"
