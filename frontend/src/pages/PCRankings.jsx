@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Result from '../components/Result'
 
 function PCRankings() {
   const [loading, setLoading] = useState(false)
@@ -21,19 +22,27 @@ function PCRankings() {
   if (loading) {
     return <h1>Loading...</h1>
   } else if (!results) {
-    <h1>An error has occured while loading leaderboard</h1>
+    return <h1>An error has occured while loading leaderboard</h1>
   } else {
     return (
-      <div>
+      <div className="results">
+        <div className="result results-header">
+          <Result />
+        </div>
         {results.map((result, index) => (
           <div key={index} className="result">
-            <span>{result.username}</span>
-            <span>{result.score}</span>
-            <span>{result.correctChars}</span>
-            <span>{result.correctWords}</span>
-            <span>{result.cpm}</span>
-            <span>{result.wpm}</span>
-            <span>{result.accuracy}%</span>
+            <Result
+              index={index}
+              username={result.username}
+              score={result.score}
+              correctChars={result.correctChars}
+              wrongChars={result.wrongChars}
+              correctWords={result.correctWords}
+              wrongWords={result.wrongWords}
+              cpm={result.cpm}
+              wpm={result.wpm}
+              accuracy={result.accuracy}
+            />
           </div>
         ))}
       </div>
