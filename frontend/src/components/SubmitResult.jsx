@@ -1,4 +1,7 @@
+import { useState } from "react"
+
 function SubmitResult() {
+  const [username, setUsername] = useState('')
   return (
     <div className="submit-result">
       <span className="submit-text">
@@ -11,8 +14,9 @@ function SubmitResult() {
             name="username"
             type="text"
             placeholder="your username"
+            onChange={(e) => setUsername(e.target.value)}
           />
-          <button type="submit">Submit</button>
+          <button type="submit">Submit Result</button>
         </div>
       </form>
     </div>
