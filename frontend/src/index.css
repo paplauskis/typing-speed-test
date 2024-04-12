@@ -350,7 +350,15 @@ hr {
   color: red;
 }
 
+.result .score {
+  color: rgb(0, 166, 255);
+}
+
 .results-header > .stat{
+  color: var(--text-color);
+}
+
+.results-header > .score {
   color: var(--text-color);
 }
 
