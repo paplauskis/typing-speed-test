@@ -1,9 +1,12 @@
 const Result = require('../models/resultSchema')
 
-exports.home_get = async (req, res) => {}
+exports.home_get = async (req, res) => {
+  res.send('hi')
+}
 
 exports.home_create_result_post = async (req, res) => {
   const {
+    username,
     score,
     wrongWords,
     correctWords,
@@ -17,6 +20,7 @@ exports.home_create_result_post = async (req, res) => {
   } = req.body
   try {
     const result = await Result.create({
+      username,
       score,
       wrongWords,
       correctWords,
@@ -35,5 +39,11 @@ exports.home_create_result_post = async (req, res) => {
 }
 
 exports.pc_rankings_get = async (req, res) => {
-  
+  const results = await Result.find({ device: 'pc' })
+  console.log(results)
+  res.status(200).json(results)
+}
+
+exports.mobile_rankings_get = async (req, res) => {
+  res.send('mobile rankings')
 }
