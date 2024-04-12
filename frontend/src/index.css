@@ -353,3 +353,8 @@ hr {
 .results-header > .stat{
   color: var(--text-color);
 }
+
+.error {
+  text-align: center;
+  margin-top: 50px;
+}
