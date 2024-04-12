@@ -19,6 +19,7 @@ function PCRankings() {
     }
     fetchResults()
   }, [])
+  
   if (loading) {
     return <h1>Loading...</h1>
   } else if (!results) {
@@ -34,6 +35,7 @@ function PCRankings() {
           {results.map((result, index) => (
             <div key={index} className="result">
               <Result
+                position={++index}
                 index={index}
                 username={result.username}
                 score={result.score}
