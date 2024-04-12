@@ -4,6 +4,7 @@ import Result from '../components/Result'
 function PCRankings() {
   const [loading, setLoading] = useState(false)
   const [results, setResults] = useState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchResults = async () => {
@@ -14,16 +15,18 @@ function PCRankings() {
         setResults(json)
         setLoading(false)
       } else {
-        console.log('error')
+        setError(json.error)
+        setLoading(false)
+        console.log(json.error)
       }
     }
     fetchResults()
   }, [])
-  
+
   if (loading) {
     return <h1>Loading...</h1>
   } else if (!results) {
-    return <h1>An error has occured while loading leaderboard</h1>
+    return <h2 className='error'>{error}</h2>
   } else {
     return (
       <div className="leaderboard">
