@@ -61,7 +61,7 @@ function TestStats({
         <hr />
         <div className="accuracy-percent subsection-two">
           <span>Accuracy</span>
-          <span>{accuracy}</span>
+          <span>{accuracy}%</span>
         </div>
       </div>
       <SubmitResult 
