@@ -17,7 +17,6 @@ function PCRankings() {
       } else {
         setError(json.error)
         setLoading(false)
-        console.log(json.error)
       }
     }
     fetchResults()
@@ -26,32 +25,90 @@ function PCRankings() {
   if (loading) {
     return <h1>Loading...</h1>
   } else if (!results) {
-    return <h2 className='error'>{error}</h2>
+    return <h2 className="error">{error}</h2>
   } else {
     return (
-      <div className="leaderboard">
-        <h2>Standard keyboard rankings (1 minute)</h2>
-        <div className="results">
-          <div className="result results-header">
-            <Result />
-          </div>
-          {results.map((result, index) => (
-            <div key={index} className="result">
-              <Result
-                position={++index}
-                index={index}
-                username={result.username}
-                score={result.score}
-                correctChars={result.correctChars}
-                wrongChars={result.wrongChars}
-                correctWords={result.correctWords}
-                wrongWords={result.wrongWords}
-                cpm={result.cpm}
-                wpm={result.wpm}
-                accuracy={result.accuracy}
-              />
+      <div className="leaderboards">
+        <div className="leaderboard one-minute-leaderboard">
+          <h2>Standard keyboard rankings (1 minute)</h2>
+          <div className="results">
+            <div className="result results-header">
+              <Result />
             </div>
-          ))}
+            {results
+              .filter((result) => result.minutes === 1)
+              .map((result, index) => (
+                <div key={index} className="result">
+                  <Result
+                    position={++index}
+                    index={index}
+                    username={result.username}
+                    score={result.score}
+                    correctChars={result.correctChars}
+                    wrongChars={result.wrongChars}
+                    correctWords={result.correctWords}
+                    wrongWords={result.wrongWords}
+                    cpm={result.cpm}
+                    wpm={result.wpm}
+                    accuracy={result.accuracy}
+                  />
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="leaderboard">
+          <h2>Standard keyboard rankings (2 minutes)</h2>
+          <div className="results">
+            <div className="result results-header">
+              <Result />
+            </div>
+            {results
+              .filter((result) => result.minutes === 2)
+              .map((result, index) => (
+                <div key={index} className="result">
+                  <Result
+                    position={++index}
+                    index={index}
+                    username={result.username}
+                    score={result.score}
+                    correctChars={result.correctChars}
+                    wrongChars={result.wrongChars}
+                    correctWords={result.correctWords}
+                    wrongWords={result.wrongWords}
+                    cpm={result.cpm}
+                    wpm={result.wpm}
+                    accuracy={result.accuracy}
+                  />
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="leaderboard">
+          <h2>Standard keyboard rankings (3 minutes)</h2>
+          <div className="results">
+            <div className="result results-header">
+              <Result />
+            </div>
+            {results
+              .filter((result) => result.minutes === 3)
+              .map((result, index) => (
+                <div key={index} className="result">
+                  <Result
+                    position={++index}
+                    index={index}
+                    username={result.username}
+                    score={result.score}
+                    correctChars={result.correctChars}
+                    wrongChars={result.wrongChars}
+                    correctWords={result.correctWords}
+                    wrongWords={result.wrongWords}
+                    cpm={result.cpm}
+                    wpm={result.wpm}
+                    accuracy={result.accuracy}
+                  />
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     )
