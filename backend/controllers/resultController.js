@@ -39,7 +39,11 @@ exports.home_create_result_post = async (req, res) => {
 }
 
 exports.pc_rankings_get = async (req, res) => {
-  const results = await Result.find({ device: 'pc' }).sort({ score: -1 })
+  const results = await Result.find({ device: 'pc' }).sort({
+    score: -1,
+    accuracy: -1,
+    correctChars: -1,
+  })
   console.log(results)
   res.status(200).json(results)
 }
