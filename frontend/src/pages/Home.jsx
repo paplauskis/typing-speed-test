@@ -79,8 +79,8 @@ function Home() {
       {testStopped && (
         <TestStats
           accuracy={accuracy}
-          wpm={wordsPerMinute}
-          cpm={charsPerMinute}
+          wpm={correctWords + wrongWords}
+          cpm={correctChars + wrongChars}
           correctChars={correctChars}
           wrongChars={wrongChars}
           correctWords={correctWords}
