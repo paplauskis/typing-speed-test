@@ -7,7 +7,7 @@ function calculateAccuracy() {
     letter.classList[0] === 'correct' ? correctTypes++ : wrongTypes++
   })
   const number = Math.floor((correctTypes / typedLetters.length) * 100)
-  return number + '%'
+  return number
 }
 
 export default calculateAccuracy
