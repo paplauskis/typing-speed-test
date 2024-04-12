@@ -41,22 +41,22 @@ function TestStats({
         <hr />
         <div className="chars-min subsection-two">
           <span>Characters/min</span>
-          <span>{cpm}</span>
+          <span>{Math.floor(cpm / minutes)}</span>
         </div>
         <hr />
         <div className="words-min subsection-two">
           <span>Words/min</span>
-          <span>{wpm}</span>
+          <span>{Math.floor(wpm / minutes)}</span>
         </div>
         <hr />
         <div className="chars-sec subsection-two">
           <span>Characters/sec</span>
-          <span>{(cpm / 60).toString().slice(0, 3)}</span>
+          <span>{(cpm / minutes / 60).toString().slice(0, 3)}</span>
         </div>
         <hr />
         <div className="words-sec subsection-two">
           <span>Words/sec</span>
-          <span>{(wpm / 60).toString().slice(0, 3)}</span>
+          <span>{(wpm / minutes / 60).toString().slice(0, 3)}</span>
         </div>
         <hr />
         <div className="accuracy-percent subsection-two">
@@ -66,8 +66,8 @@ function TestStats({
       </div>
       <SubmitResult 
       accuracy={accuracy}
-      wpm={wpm}
-      cpm={cpm}
+      wpm={Math.floor(wpm / minutes)}
+      cpm={Math.floor(cpm / minutes)}
       correctChars={correctChars}
       wrongChars={wrongChars}
       correctWords={correctWords}
