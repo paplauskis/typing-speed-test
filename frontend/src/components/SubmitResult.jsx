@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function SubmitResult({
   accuracy,
@@ -12,6 +13,7 @@ function SubmitResult({
 }) {
   const [username, setUsername] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -44,8 +46,8 @@ function SubmitResult({
     }
 
     if (response.ok) {
-      console.log('result submitted', json)
       setSubmitted(true)
+      navigate('/pc-rankings')
     }
   }
   if (!submitted) {
