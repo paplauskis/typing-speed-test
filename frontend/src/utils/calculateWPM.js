@@ -15,7 +15,7 @@ function getWordCount() {
   const typedLetters = [...tl]
   let count = 0
   typedLetters.forEach((letter) => {
-    if (letter.textContent === ' ') count++
+    if (letter.textContent === ' ' || letter.textContent === '_') count++
   })
   return count
 }
