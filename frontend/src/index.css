@@ -297,7 +297,7 @@ hr {
 .results {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 2px solid black;
   width: fit-content;
   margin: 15px auto 30px auto;
 }
@@ -305,12 +305,12 @@ hr {
 .result {
   display: flex;
   gap: 0px;
-  border: 1px solid black;
   width: fit-content;
 }
 
 .result > .stat {
-  border: 1px solid black;
+  border: 2px solid black;
+  border-right: none;
   border-top: none;
   width: 80px;
   display: flex;
@@ -319,12 +319,20 @@ hr {
   text-align: center;
 }
 
+.result > .stat:nth-child(10) {
+  border-right: 2px solid black;
+}
+
+.result:nth-child(1) {
+  border-top: 2px solid black;
+}
+
 .results .result:nth-child(odd) {
   background-color: var(--accent-color);
 }
 
 .results .result:nth-child(even) {
-  background-color: rgb(66, 66, 66);
+  background-color: rgb(74, 74, 74);
 }
 
 .result > .username {
