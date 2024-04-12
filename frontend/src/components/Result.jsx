@@ -1,4 +1,5 @@
 function Result({
+  position = 'Position',
   username = 'Username',
   score = 'Score',
   correctChars = 'Correct chars',
@@ -11,6 +12,7 @@ function Result({
 }) {
   return (
     <>
+      <div className="position stat">{position}</div>
       <div className="username stat">{username}</div>
       <div className="score stat">{score}</div>
       <div className="correct-chars stat">{correctChars}</div>
