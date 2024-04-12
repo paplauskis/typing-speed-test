@@ -10,9 +10,12 @@ function SubmitResult({
   wrongWords,
   minutes,
 }) {
+
   const [username, setUsername] = useState('')
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+
     const result = {
       username,
       score: correctChars - wrongChars,
@@ -24,6 +27,24 @@ function SubmitResult({
       correctWords,
       wrongWords,
       minutes,
+      device: 'pc',
+    }
+
+    const response = await fetch('http://localhost:4000/api', {
+      method: 'POST',
+      body: JSON.stringify(result),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    const json = await response.json()
+
+    if (!response.ok) {
+      console.log(json.error)
+    }
+
+    if (response.ok) {
+      console.log('result submitted', json)
     }
   }
 
