@@ -39,13 +39,16 @@ exports.home_create_result_post = async (req, res) => {
 }
 
 exports.pc_rankings_get = async (req, res) => {
-  const results = await Result.find({ device: 'pc' }).sort({
-    score: -1,
-    accuracy: -1,
-    correctChars: -1,
-  })
-  console.log(results)
-  res.status(200).json(results)
+  try {
+    const results = await Result.find({ device: 'pc' }).sort({
+      score: -1,
+      accuracy: -1,
+      correctChars: -1,
+    })
+    res.status(200).json(results)
+  } catch (error) {
+    res.status(500).json({ error: error })
+  }
 }
 
 exports.mobile_rankings_get = async (req, res) => {
