@@ -1,6 +1,3 @@
-import Header from '../components/Header'
-import Navbar from '../components/Navbar'
-import NavbarLine from '../components/NavbarLine'
 import Duration from '../components/Duration'
 import SpeedTestContainer from '../components/SpeedTestContainer'
 import Words from '../components/Words'
