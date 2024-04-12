@@ -311,6 +311,7 @@ hr {
 
 .result > .stat {
   border: 1px solid black;
+  border-top: none;
   width: 80px;
   display: flex;
   align-items: center;
