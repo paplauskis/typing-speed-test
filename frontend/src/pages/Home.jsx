@@ -50,7 +50,7 @@ function Home() {
         setAccuracy(checkPressed(e, charsTyped))
         setWordsPerMinute(calculateWPM())
         setCharsPerMinute(calculateCPM())
-        scrollWords()
+        scrollWords(e)
       }
     }
 
@@ -81,6 +81,12 @@ function Home() {
             </div>
             <Words />
           </SpeedTestContainer>
+          <button
+            className="restart-button"
+            onClick={() => window.location.reload()}
+          >
+            Restart Test
+          </button>
         </>
       )}
       {testStopped && (
