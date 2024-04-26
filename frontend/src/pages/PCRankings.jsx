@@ -35,7 +35,7 @@ function PCRankings() {
             <div className="result results-header">
               <Result />
             </div>
-            {results
+            {results.oneMinuteResults
               .filter((result) => result.minutes === 1)
               .map((result, index) => (
                 <div key={index} className="result">
@@ -62,7 +62,7 @@ function PCRankings() {
             <div className="result results-header">
               <Result />
             </div>
-            {results
+            {results.twoMinuteResults
               .filter((result) => result.minutes === 2)
               .map((result, index) => (
                 <div key={index} className="result">
@@ -89,7 +89,7 @@ function PCRankings() {
             <div className="result results-header">
               <Result />
             </div>
-            {results
+            {results.threeMinuteResults
               .filter((result) => result.minutes === 3)
               .map((result, index) => (
                 <div key={index} className="result">
