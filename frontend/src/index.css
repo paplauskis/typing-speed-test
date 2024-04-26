@@ -274,7 +274,8 @@ hr {
   border-color: var(--green);
 }
 
-.form button {
+.form button,
+.restart-button {
   color: var(--text-color);
   background-color: transparent;
   border: 2px solid var(--blue);
@@ -284,7 +285,8 @@ hr {
   transition: 0.3s;
 }
 
-.form button:hover {
+.form button:hover,
+.restart-button {
   border-color: var(--green);
   cursor: pointer;
 }
@@ -365,4 +367,15 @@ hr {
 .error {
   text-align: center;
   margin-top: 50px;
+}
+
+.restart-button {
+  display: block;
+  margin: 30px auto;
+  font-size: 1.2rem;
+  border: 2px solid var(--blue);
+}
+
+.restart-button:hover {
+  border: 2px solid var(--green);
 }
