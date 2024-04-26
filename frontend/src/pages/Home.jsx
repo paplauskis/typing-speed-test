@@ -19,6 +19,7 @@ import { useState, useEffect } from 'react'
 function Home() {
   const [activeIndex, setActiveIndex] = useState(1)
   const [testStarted, setGameStarted] = useState(false)
+  const [charsTyped, setCharsTyped] = useState(0)
   const [accuracy, setAccuracy] = useState('0%')
   const [wordsPerMinute, setWordsPerMinute] = useState(0)
   const [charsPerMinute, setCharsPerMinute] = useState(0)
@@ -34,13 +35,19 @@ function Home() {
     setWrongChars(calculateChars().wrongChars)
     setWrongWords(calculateWords().wrongWords)
     setTestStopped(true)
+    setGameStarted(false)
   }
 
   useEffect(() => {
     const handlePress = (e) => {
-      if (e.key === ' ') setGameStarted(true)
+      setGameStarted(true)
+      if (e.key === 'Backspace') {
+        setCharsTyped((prevCharsTyped) => prevCharsTyped - 1)
+      } else {
+        setCharsTyped((prevCharsTyped) => prevCharsTyped + 1)
+      }
       if (setGameStarted) {
-        setAccuracy(checkPressed(e))
+        setAccuracy(checkPressed(e, charsTyped))
         setWordsPerMinute(calculateWPM())
         setCharsPerMinute(calculateCPM())
         scrollWords()
@@ -51,7 +58,7 @@ function Home() {
       window.addEventListener('keydown', handlePress)
     }
     return () => window.removeEventListener('keydown', handlePress)
-  }, [testStopped])
+  }, [testStopped, charsTyped])
   return (
     <>
       {!testStopped && (
