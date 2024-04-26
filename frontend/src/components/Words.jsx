@@ -1,8 +1,17 @@
+import { useEffect, useState } from 'react'
 import { loadRandomWords } from '../utils/textFileUtils'
 
-const letters = await loadRandomWords()
-
 function Words() {
+  const [letters, setLetters] = useState([])
+
+  useEffect(() => {
+    async function getData() {
+      const arr = await loadRandomWords()
+      setLetters(arr)
+    }
+    getData()
+  }, [])
+
   if (letters === null) {
     return <span className="error-text">ERROR: failed to generate text</span>
   } else {
